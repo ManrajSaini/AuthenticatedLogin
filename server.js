@@ -8,11 +8,13 @@ const googleRouter = require("./routes/googleRoutes");
 const githubRouter = require("./routes/githubRoutes");
 const linkedinRouter = require("./routes/linkedinRoutes");
 const twitterRouter = require("./routes/twitterRoutes");
+const discordRouter = require("./routes/discordRoutes");
 
 require("./authentication/googleAuth");
 require("./authentication/githubAuth");
 require("./authentication/linkedinAuth");
 require("./authentication/twitterAuth");
+require("./authentication/discordAuth");
 
 dotenv.config();
 
@@ -34,6 +36,7 @@ app.use("/auth/google", googleRouter);
 app.use("/auth/github", githubRouter);
 app.use("/auth/linkedin", linkedinRouter);
 app.use("/auth/twitter", twitterRouter);
+app.use("/auth/discord", discordRouter);
 
 app.get("/", (req,res) => {
     return res.render('auth');

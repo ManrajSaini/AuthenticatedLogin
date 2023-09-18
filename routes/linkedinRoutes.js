@@ -15,7 +15,6 @@ linkedinRouter.get("/callback",
 );
 
 linkedinRouter.get('/callback/success', (req,res) => {
-    console.log(req.user)
     res.render('successLinkedin', {user: req.user});
 });
 

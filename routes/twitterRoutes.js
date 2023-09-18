@@ -15,7 +15,6 @@ twitterRouter.get("/callback",
 );
 
 twitterRouter.get('/callback/success', (req,res) => {
-    console.log(req.user)
     res.render('successTwitter', {user: req.user});
 });
 
