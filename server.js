@@ -7,10 +7,12 @@ const session = require("express-session");
 const googleRouter = require("./routes/googleRoutes");
 const githubRouter = require("./routes/githubRoutes");
 const linkedinRouter = require("./routes/linkedinRoutes");
+const twitterRouter = require("./routes/twitterRoutes");
 
 require("./authentication/googleAuth");
 require("./authentication/githubAuth");
 require("./authentication/linkedinAuth");
+require("./authentication/twitterAuth");
 
 dotenv.config();
 
@@ -31,6 +33,7 @@ app.use(passport.session());
 app.use("/auth/google", googleRouter);
 app.use("/auth/github", githubRouter);
 app.use("/auth/linkedin", linkedinRouter);
+app.use("/auth/twitter", twitterRouter);
 
 app.get("/", (req,res) => {
     return res.render('auth');

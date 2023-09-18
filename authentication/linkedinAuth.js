@@ -15,6 +15,7 @@ passport.deserializeUser((obj, cb) => {
 passport.use(new LinkedInStrategy({
         clientID: process.env.LINKEDIN_CLIENT_ID,
         clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+        Authorization: `Bearer${process.env.LINKEDIN_ACCESS_TOKEN}`,
         callbackURL: "http://localhost:8080/auth/linkedin/callback",
         scope: ['profile', 'email', 'openid']
     },
