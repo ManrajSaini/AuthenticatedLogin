@@ -22,4 +22,10 @@ discordRouter.get('/callback/error', (req,res) =>{
     res.send("Error Logging In");
 });
 
+discordRouter.get('/logout', (req, res) => {
+    req.session.destroy(function (err) {
+    res.redirect('/');
+  });
+});
+
 module.exports = discordRouter;

@@ -22,4 +22,10 @@ linkedinRouter.get('/callback/error', (req,res) =>{
     res.send("Error Logging In");
 });
 
+linkedinRouter.get('/logout', (req, res) => {
+    req.session.destroy(function (err) {
+    res.redirect('/');
+  });
+});
+
 module.exports = linkedinRouter;

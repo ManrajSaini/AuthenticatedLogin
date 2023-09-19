@@ -22,4 +22,10 @@ twitterRouter.get('/callback/error', (req,res) =>{
     res.send("Error Logging In");
 });
 
+twitterRouter.get('/logout', (req, res) => {
+    req.session.destroy(function (err) {
+    res.redirect('/');
+  });
+});
+
 module.exports = twitterRouter;

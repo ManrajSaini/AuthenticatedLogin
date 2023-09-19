@@ -22,4 +22,10 @@ githubRouter.get('/callback/error', (req,res) =>{
     res.send("Error Logging In");
 });
 
+githubRouter.get('/logout', (req, res) => {
+    req.session.destroy(function (err) {
+    res.redirect('/');
+  });
+});
+
 module.exports = githubRouter;
