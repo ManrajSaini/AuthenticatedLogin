@@ -1,5 +1,5 @@
 {
-  "name": "googlelogin",
+  "name": "passport-auths",
   "version": "1.0.0",
   "description": "Google Login Form, Google OAuth",
   "main": "server.js",
