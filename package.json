@@ -1,7 +1,7 @@
 {
   "name": "passport-auths",
   "version": "1.0.0",
-  "description": "Google Login Form, Google OAuth",
+  "description": "Multiple passport authentication strategies",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
